@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./common/header/Header";
 import Home from "../screens/home/Home";
 //import Details from "../screens/details/Details";
 import { Details } from "@material-ui/icons";

@@ -204,7 +204,7 @@ export default function Header(props) {
   }
   return (
     <div className="header">
-      <img src="" alt="" className="logoRotate" />
+      <img src="" alt="logo" className="logoRotate" />
       <span style={{ float: "right" }}>
         {button}
         {session ? (
