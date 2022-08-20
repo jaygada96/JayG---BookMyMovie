@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../common/header/Header";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div>
-      <Header />
+      <Header baseUrl={props.baseUrl} />
     </div>
   );
 };

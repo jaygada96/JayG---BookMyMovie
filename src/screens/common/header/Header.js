@@ -177,7 +177,6 @@ export default function Header(props) {
 
   const onFormSubmitted = async (event) => {
     if (validateRegisterForm()) {
-      console.log(props);
       const rawResponse = await fetch(props.baseUrl + "/signup", {
         method: "POST",
         headers: {
