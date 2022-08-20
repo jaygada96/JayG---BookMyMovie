@@ -15,39 +15,6 @@ import Input from "@material-ui/core/Input";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import InputLabel from "@material-ui/core/InputLabel";
 
-// const Header = () => {
-//   return (
-//     <div className="header">
-//       <img src="" alt="logo" className="logoRotate" />
-//       <span style={{ float: "right" }}>
-//         <Button
-//           variant="contained"
-//           color="default"
-//           style={{ marginLeft: "10px" }}
-//         >
-//           Login
-//         </Button>
-//         <Button
-//           variant="contained"
-//           color="default"
-//           style={{ marginLeft: "10px" }}
-//         >
-//           Logout
-//         </Button>
-//         <Button
-//           variant="contained"
-//           color="primary"
-//           style={{ marginLeft: "10px" }}
-//         >
-//           Book Show
-//         </Button>
-//       </span>
-//     </div>
-//   );
-// };
-
-// export default Header;
-
 const customStyles = {
   content: {
     top: "50%",
@@ -204,17 +171,20 @@ export default function Header(props) {
     setIsOpen(false);
   };
   const logoutHandler = async () => {
-    const rawResponse = await fetch(props.baseUrl + "/auth/logout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: "Basic " + window.btoa(username + ":" + password),
-      },
-    });
+    // const rawResponse = await fetch(props.baseUrl + "auth/logout", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     authorization: "Bearer " + window.btoa(username + ":" + password),
+    //   },
+    // });
     window.sessionStorage.removeItem("access-token");
     setSession(window.sessionStorage.getItem("access-token"));
-    const data = await rawResponse.json();
-    console.log(data);
+    setUsername("");
+    setPassword("");
+
+    // const data = await rawResponse.json();
+    // console.log(data);
   };
 
   const bookShowHandler = () => {
