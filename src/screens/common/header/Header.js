@@ -1,9 +1,7 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import "./Header.css";
-//import logo from "../assets/logo.svg";
-import ReactModal from "react-modal";
-
+import Logo from "../../../assets/logo.svg";
 //modal
 import Modal from "react-modal";
 import Tabs from "@material-ui/core/Tabs";
@@ -204,7 +202,7 @@ export default function Header(props) {
   }
   return (
     <div className="header">
-      <img src="" alt="logo" className="logoRotate" />
+      <img className="logo" src={Logo} alt="logo" />
       <span style={{ float: "right" }}>
         {button}
         {session ? (
