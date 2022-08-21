@@ -18,7 +18,8 @@ export default function StarRating(props) {
         }
         return (
           <StarBorderIcon
-            color="default"
+            key={index}
+            color="inherit"
             className="star"
             style={{ color: starColor }}
             onClick={() => setCurrentRating(index + 1)}

@@ -113,7 +113,7 @@ export default function Details(props) {
             />
           </div>
           <div style={{ width: "20%" }}>
-            <Typography style={{ fontWeight: 600 }}>
+            <Typography style={{ fontWeight: 600 }} component={"span"}>
               Rate this movie:
               <StarRating
                 numberOfStars="5"
