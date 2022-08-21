@@ -6,8 +6,8 @@ export default function StarRating(props) {
   const [currentRating, setCurrentRating] = React.useState();
 
   React.useEffect(() => {
-    setCurrentRating(Math.floor(props.rating / 2));
-  }, [props.rating]);
+    setCurrentRating(currentRating);
+  }, [currentRating]);
 
   return (
     <div className="rating" data-rating={currentRating}>
