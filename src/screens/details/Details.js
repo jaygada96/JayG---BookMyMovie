@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 //import StarRating from "../../common/starrating/StarRating";
-import StarRating from "../common/header/starrating/StarRating";
+import StarRating from "../common/starrating/StarRating";
 
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
