@@ -121,7 +121,13 @@ export default function Details(props) {
                 onClick={rateClickHandler}
               />
             </Typography>
-            <Typography style={{ fontWeight: 600, margin: "16px 0" }}>
+            <Typography
+              style={{
+                fontWeight: 600,
+                marginTop: "16px",
+                marginBottom: "16px",
+              }}
+            >
               Artists:
             </Typography>
             <GridList cols={2}>
