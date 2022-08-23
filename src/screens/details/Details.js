@@ -75,9 +75,11 @@ export default function Details(props) {
           <Link to={"/"}>&#60; Back to Home</Link>
         </Typography>
         <div className="details-container">
+          {/* left section */}
           <div style={{ width: "20%", marginLeft: "10px" }}>
             <img src={movieDetails.poster_url} alt={movieDetails.title} />
           </div>
+          {/* middle section */}
           <div style={{ width: "60%" }}>
             <Typography variant="headline" component="h2">
               {movieDetails.title}
@@ -112,6 +114,7 @@ export default function Details(props) {
               onReady={videoOnReady}
             />
           </div>
+          {/* right section */}
           <div style={{ width: "20%" }}>
             <Typography style={{ fontWeight: 600 }} component={"span"}>
               Rate this movie:

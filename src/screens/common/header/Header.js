@@ -202,7 +202,9 @@ export default function Header(props) {
   }
   return (
     <div className="header">
+      {/* logo */}
       <img className="logo" src={Logo} alt="logo" />
+      {/* login,logout, book show buttons */}
       <span style={{ float: "right" }}>
         {button}
         {session ? (
@@ -225,6 +227,8 @@ export default function Header(props) {
           </Button>
         )}
       </span>
+
+      {/* modal code */}
       {showModal ? (
         <Modal
           isOpen={modalIsOpen}

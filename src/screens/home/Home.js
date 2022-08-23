@@ -175,7 +175,9 @@ function Home(props) {
   return (
     <div>
       <Header baseUrl={props.baseUrl} />
+      {/* Upcoming Movies Header */}
       <div className="heading">Upcoming Movies</div>
+      {/* Upcoming Movies Grid */}
       <GridList
         cellHeight={250}
         style={{ flexWrap: "nowrap", transform: "translateZ(0)" }}
@@ -190,6 +192,7 @@ function Home(props) {
       </GridList>
       <div style={{ display: "flex" }}>
         <div style={{ width: "76%", margin: "16px" }}>
+          {/* Released Movies Grid */}
           <GridList cellHeight={350} cols={4}>
             {moviesList.map((movie) => (
               <GridListTile key={movie.id}>
@@ -212,6 +215,7 @@ function Home(props) {
             ))}
           </GridList>
         </div>
+        {/* Filter Form */}
         <div style={{ width: "24%", margin: "16px" }}>
           <Card className="cardStyle">
             <CardContent>
