@@ -183,36 +183,40 @@ function Home(props) {
         style={{ flexWrap: "nowrap", transform: "translateZ(0)" }}
         cols={6}
       >
-        {cloneMovieList.map((movie) => (
-          <GridListTile key={movie.id}>
-            <img src={movie.poster_url} alt={movie.title} />
-            <GridListTileBar title={movie.title} />
-          </GridListTile>
-        ))}
+        {cloneMovieList
+          .filter((allMovie) => allMovie.status !== "RELEASED")
+          .map((movie) => (
+            <GridListTile key={movie.id}>
+              <img src={movie.poster_url} alt={movie.title} />
+              <GridListTileBar title={movie.title} />
+            </GridListTile>
+          ))}
       </GridList>
       <div style={{ display: "flex" }}>
         <div style={{ width: "76%", margin: "16px" }}>
           {/* Released Movies Grid */}
           <GridList cellHeight={350} cols={4}>
-            {moviesList.map((movie) => (
-              <GridListTile key={movie.id}>
-                <Link to={"/movie/" + movie.id}>
-                  <img
-                    src={movie.poster_url}
-                    alt={movie.title}
-                    style={{ width: "100%" }}
-                  />
-                  <GridListTileBar
-                    title={movie.title}
-                    subtitle={
-                      <span>
-                        Release Date: {dateString(movie.release_date)}
-                      </span>
-                    }
-                  />
-                </Link>
-              </GridListTile>
-            ))}
+            {moviesList
+              .filter((allMovie) => allMovie.status === "RELEASED")
+              .map((movie) => (
+                <GridListTile key={movie.id}>
+                  <Link to={"/movie/" + movie.id}>
+                    <img
+                      src={movie.poster_url}
+                      alt={movie.title}
+                      style={{ width: "100%" }}
+                    />
+                    <GridListTileBar
+                      title={movie.title}
+                      subtitle={
+                        <span>
+                          Release Date: {dateString(movie.release_date)}
+                        </span>
+                      }
+                    />
+                  </Link>
+                </GridListTile>
+              ))}
           </GridList>
         </div>
         {/* Filter Form */}

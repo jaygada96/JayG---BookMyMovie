@@ -169,13 +169,14 @@ export default function Header(props) {
     setIsOpen(false);
   };
   const logoutHandler = async () => {
-    // const rawResponse = await fetch(props.baseUrl + "auth/logout", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     authorization: "Bearer " + window.btoa(username + ":" + password),
-    //   },
-    // });
+    const rawResponse = await fetch(props.baseUrl + "auth/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization:
+          "Bearer " + window.sessionStorage.getItem("access-token"),
+      },
+    });
     window.sessionStorage.removeItem("access-token");
     setSession(window.sessionStorage.getItem("access-token"));
     setUsername("");
